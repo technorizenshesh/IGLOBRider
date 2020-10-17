@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/toobarcolor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkgrey">
+
+        <LinearLayout
+            android:layout_above="@+id/cancel"
+            android:id="@+id/locationlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/toobarcolor"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/sendReq"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+
+                    android:text="@string/request"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCircle"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="155dp"
+                    android:layout_height="155dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/drawable_circle_dark_blue"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/drawable_circle_yellow"
+                    android:rotation="-90" />
+
+                <TextView
+                    android:id="@+id/textViewTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <com.skyfishjy.library.RippleBackground
+                android:id="@+id/content1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:rb_color="@color/toobarcolor"
+                app:rb_duration="3000"
+                app:rb_radius="32dp"
+                app:rb_rippleAmount="4"
+                app:rb_scale="6">
+
+
+                <ImageView
+                    android:id="@+id/users"
+                    android:src="@drawable/ripple_img"
+                    android:layout_centerInParent="true"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp" />
+                <TextView
+                    android:id="@+id/timer"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="@dimen/large"
+                    android:layout_below="@+id/users"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </com.skyfishjy.library.RippleBackground>
+
+
+
+            <LinearLayout
+android:visibility="gone"
+    android:background="@color/toobarcolor"
+    android:layout_marginTop="40dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/location"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/extralarge" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/green_circle" />
+
+            <TextView
+                android:id="@+id/pick_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/red_circle" />
+
+            <TextView
+                android:id="@+id/droplocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="7dp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/wait_message_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/waitsearchdriver"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small" />
+</LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/darkgreybutton"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</RelativeLayout>

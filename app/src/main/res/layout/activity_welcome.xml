@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_back"
+    tools:context="main.com.iglobuser.activity.WelcomeAct">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/lll"
+    android:layout_marginTop="130dp"
+    android:layout_centerHorizontal="true"
+    android:src="@drawable/logo"
+    android:layout_width="170dp"
+    android:layout_height="210dp" />
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/lll"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/loginbut"
+            android:textColor="@color/white"
+            android:text="@string/login"
+            android:background="@drawable/button_round_dra_grey"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/signupbut"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:text="@string/signup"
+            android:background="@drawable/button_round_dra_grey"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

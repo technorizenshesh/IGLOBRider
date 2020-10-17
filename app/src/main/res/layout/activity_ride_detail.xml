@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ride_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    tools:context=".activity.RideDetailAct">
+
+    <RelativeLayout
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/toobarcolor"
+
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/CustomTheme" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/exit_app_but"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titletext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:text="@string/ridedetail"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:gravity="end|center_vertical"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mainlay"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/mainlay_lin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bookingnoid"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium" />
+
+                    <TextView
+                        android:id="@+id/bookid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text=""
+
+                        android:textColor="@color/darktextcol"
+                        android:textSize="@dimen/medium" />
+
+                    <TextView
+                        android:id="@+id/datetime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text=""
+                        android:textColor="@color/darkgrey"
+                        android:textSize="@dimen/small" />
+
+
+                </LinearLayout>
+            <LinearLayout
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:background="@color/white"
+
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:visibility="visible"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/green_circle" />
+
+                        <TextView
+                            android:id="@+id/pickuploc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="10dp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:padding="4dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/small" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:visibility="visible"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/red_circle" />
+
+                        <TextView
+                            android:id="@+id/droplocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="10dp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:padding="4dp"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/small" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/botumlay"
+                    android:layout_below="@+id/location" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+<ProgressBar
+    android:visibility="gone"
+    android:layout_centerInParent="true"
+    android:id="@+id/prgressbar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+</RelativeLayout>

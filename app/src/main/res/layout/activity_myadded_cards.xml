@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".paymentclasses.MyaddedCards">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/toobarcolor"
+
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/backlay"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ic_back" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/mycards"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:visibility="visible"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/addcard"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_add_white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_below="@+id/mainlay"
+    android:layout_height="wrap_content">
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/addedcardlist"
+        android:divider="@null"
+        android:layout_height="wrap_content"></ListView>
+
+</LinearLayout>
+
+</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="main.com.iglobuser.activity.DriverAcceptStatus">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true">
+        <RelativeLayout
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/toobarcolor"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/CustomTheme" />
+            <RelativeLayout
+                android:layout_centerVertical="true"
+                android:id="@+id/exit_app_but"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/driver_sts"
+                android:layout_toRightOf="@+id/exit_app_but"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ontheway"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/medium" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                android:id="@+id/addpoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addpointoint"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/medium"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_alignParentRight="true"
+                android:id="@+id/emergency_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_call"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/medium"
+                android:layout_marginRight="5dp"/>
+        </RelativeLayout>
+
+        <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottumlay"
+            android:layout_below="@+id/mainlay"
+            map:mapType="normal" />
+
+        <ImageView
+            android:id="@+id/gpslocator"
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/bottumlay"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_gps_local" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainlay"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/green_circle" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="20dp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="12dp"
+                        android:src="@drawable/red_circle" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/pickuplocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/clear_pick_ic"
+                                android:background="@null"
+                                android:hint="@string/pickuplocation"
+                                android:inputType="textNoSuggestions"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small" />
+
+                            <ImageView
+                                android:id="@+id/clear_pick_ic"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_cancel"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+
+                                android:id="@+id/rel_pic"
+                                android:layout_width="30dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginRight="5dp"
+                                android:visibility="gone">
+
+
+                                <ImageView
+                                    android:id="@+id/picmap_ic"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/destination"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/dropofflocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/updatedestinaton"
+                                android:background="@null"
+                                android:hint="@string/droplocation"
+                                android:inputType="textNoSuggestions"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/clear_drop_ic"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                android:layout_toLeftOf="@+id/rel"
+                                android:src="@drawable/ic_cancel"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+
+                                android:id="@+id/updatedestinaton"
+                                android:layout_width="30dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_centerInParent="true"
+                                    android:id="@+id/map_ic"
+                                    android:layout_width="22dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/addres" />
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <RelativeLayout
+            android:id="@+id/bottumlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:id="@+id/timeaway"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                android:gravity="center"
+                android:text="1 min away"
+                android:textColor="@color/darktextcol"
+                android:textSize="@dimen/medium" />
+
+            <View
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/timeaway"
+                android:id="@+id/vv"
+                android:background="@color/darkgrey"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp">
+
+            </View>
+            <LinearLayout
+                android:layout_below="@+id/vv"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/hor_det"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:id="@+id/driver_det_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:gravity="center">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/driver_imag"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/driver" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.7"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/drivername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Car x"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:visibility="visible"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/star" />
+
+                        <TextView
+                            android:id="@+id/rating_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:background="@color/darkgrey"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/carimage"
+                                android:layout_width="35dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/car_img" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/carnumber"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/black"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/cardetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center"
+                        android:inputType="textCapSentences"
+
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="2.7"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/carname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center"
+                        android:singleLine="true"
+                        android:text="SUZUKI"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/carbrand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center"
+                        android:singleLine="true"
+                        android:text="Desire"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium" />
+
+<LinearLayout
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:weightSum="3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/share_img"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:src="@drawable/share" />
+    <ImageView
+        android:id="@+id/message_lay"
+        android:layout_weight="1"
+
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:src="@drawable/message" />
+    <ImageView
+        android:id="@+id/calllay"
+        android:layout_weight="1"
+
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:src="@drawable/call" />
+
+
+</LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_below="@+id/hor_det"
+                android:id="@+id/driver_status_sec"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/toobarcolor"
+                android:text="@string/driverontheway"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

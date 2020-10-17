@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/status_tv"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:background="@color/green"
+                android:gravity="center"
+                android:text="Current Booking"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="15-jun-2018,1:15 pm"
+                android:textColor="@color/black"
+
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+<View
+    android:layout_marginTop="3dp"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"></View>
+<LinearLayout
+    android:weightSum="5"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_weight="3.5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <RelativeLayout
+                android:layout_marginLeft="3dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/green_circle" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/red_circle" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/pickuplocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/clear_pick_ic"
+                            android:background="@null"
+                            android:hint="@string/pickuplocation"
+                            android:inputType="textNoSuggestions"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/small" />
+
+                        <ImageView
+                            android:id="@+id/clear_pick_ic"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_cancel"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+
+                            android:id="@+id/rel_pic"
+                            android:layout_width="30dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+
+                            android:layout_marginRight="5dp"
+                            android:visibility="gone">
+
+
+                            <ImageView
+                                android:id="@+id/picmap_ic"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/dropofflocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/clear_drop_ic"
+                            android:background="@null"
+                            android:hint="@string/droplocation"
+                            android:inputType="textNoSuggestions"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/small"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/clear_drop_ic"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/rel"
+                            android:src="@drawable/ic_cancel"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+
+                            android:id="@+id/rel"
+                            android:layout_width="22dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+
+                            android:layout_marginRight="5dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/map_ic"
+                                android:layout_width="22dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:src="@drawable/addres" />
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="5dp"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:layout_weight="1.5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+<TextView
+    android:textColor="@color/black"
+    android:text="@string/billpaywith"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/paymenttype"
+            android:textStyle="italic"
+            android:textSize="@dimen/medium"
+            android:text="Cash"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/invoice_tv"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textSize="@dimen/medium"
+            android:text="@string/invoice"
+            android:background="@color/darktextcol"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/medium"
+        android:text="@string/driver"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/help"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentRight="true"
+        android:background="@color/red"
+        android:textSize="@dimen/medium"
+        android:layout_marginRight="10dp"
+        android:text="@string/help"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+<RelativeLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/driver_img"
+    android:src="@drawable/driver"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+<LinearLayout
+    android:layout_toLeftOf="@+id/addfavourite"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_toRightOf="@+id/driver_img"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/drivername"
+        android:textSize="@dimen/medium"
+        android:text=""
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/cardetail"
+        android:textSize="@dimen/small"
+        android:text=""
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/addfavourite"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/blackwishlist" />
+
+</RelativeLayout>
+        <View
+            android:layout_marginTop="3dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"></View>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

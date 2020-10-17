@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+   >
+    <RelativeLayout
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/toobarcolor"
+
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/CustomTheme" />
+
+
+
+        <RelativeLayout
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/exit_app_but"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/titletext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="55dp"
+            android:text="@string/payment"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium" />
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/masar_textlogo" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_above="@+id/sending_payment"
+        android:fillViewport="true"
+        android:layout_below="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.stripe.android.view.CardInputWidget
+                android:id="@+id/card_input_widget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF">
+
+
+
+                <RelativeLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/modeofpayment">
+
+                    <TextView
+                        android:id="@+id/amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="@string/payamount"
+                        android:textColor="#000"
+                        android:textSize="10pt" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone"
+                        android:id="@+id/demoplus_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/amount"
+                        android:layout_marginLeft="30dp"
+                        android:text="Plus Package"
+                        android:textColor="#41c7ff"
+                        android:textSize="8pt" />
+
+                    <Button
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/package_money"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/demoplus_name"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/border_grey_rec"
+                        android:hint="$0.00" />
+                </RelativeLayout>
+
+                <Button
+                    android:visibility="visible"
+                    android:id="@+id/button2"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/toobarcolor"
+                    android:text="Edit"
+                    android:textColor="@color/white" />
+
+
+
+
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/sending_payment"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@color/toobarcolor"
+        android:text="Sending"
+        android:textColor="@color/white"
+        android:textSize="10pt" />
+
+</RelativeLayout>

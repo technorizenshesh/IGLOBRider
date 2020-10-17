@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layoutDirection="ltr"
+
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/cross"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cross"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large"
+                android:text="@string/enterotp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/otp_edt"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:inputType="number"
+                android:textSize="@dimen/medium"
+                android:background="@drawable/border_grey_rec"
+                android:hint="@string/plsenterotp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/confirm"
+                    android:background="@color/darktextcol"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="@string/confirm"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp" />
+                <TextView
+                    android:id="@+id/cancel"
+                    android:background="@color/darkgrey"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="@string/cancel"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/remainingtime"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:textSize="@dimen/small"
+                android:text="0.0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/resendotp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/medium"
+                android:text="@string/resndotp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="main.com.iglobuser">
+
+    <permission
+        android:name="main.com.iglobuser.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_icon"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/AppTheme">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+        <activity
+            android:name="main.com.iglobuser.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="main.com.iglobuser.MainActivity"
+            android:label=""
+            android:windowSoftInputMode="adjustNothing"
+            />
+        <activity
+            android:name="main.com.iglobuser.draweractivity.BaseActivity"
+            android:label=""
+             />
+        <activity android:name=".activity.WalletAct"/>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/googlekey" />
+
+        <activity
+            android:name="main.com.iglobuser.activity.ProfileAct"
+            android:label="" />
+        <activity
+            android:name="main.com.iglobuser.paymentclasses.MyaddedCards"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.paymentclasses.UpdateCard"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.WelcomeAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.EmergencyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.InviteEarnAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.paymentclasses.MyCardsPayment"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="main.com.iglobuser.activity.UpdateLocation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.RideDetailAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.LoginAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.ChatingAct"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.ForgotPassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.SetLocation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.SignupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.TripStatusAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.ConfirmSendReqAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.DriverAcceptStatus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.DriverDetailAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.RideHistory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.FeedbackUs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.multipledroppoint.SelectRouteWithCollectiveRide"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="main.com.iglobuser.service.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="main.com.iglobuser.service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="main.com.iglobuser.paymentclasses.ConfirmPayment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.FavoriteDrivers"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.SendRequestFavDriver"
+            android:screenOrientation="portrait" />
+        <activity android:name="main.com.iglobuser.activity.MobileVerificationActivity" />
+
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/FACEBOOK_APP_ID" />
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+        <meta-data
+            android:name="com.facebook.accountkit.FacebookAppEventsEnabled"
+            android:value="false" />
+
+        <activity
+            android:name="com.facebook.accountkit.ui.AccountKitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.paymentclasses.SaveCardDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="main.com.iglobuser.activity.NotificationAct"
+            android:label="" />
+        <activity
+            android:name="main.com.iglobuser.activity.SupportAct"
+            android:label="" />
+        <activity android:name="main.com.iglobuser.activity.InvoiceActivity" />
+        <activity
+            android:label=""
+            android:name="main.com.iglobuser.activity.AboutUsAct"></activity>
+        <activity
+            android:label=""
+            android:name="main.com.iglobuser.activity.PrivacyPolicyAct"></activity>
+        <activity
+            android:label=""
+            android:name="main.com.iglobuser.activity.TermsConditions"></activity>
+    </application>
+
+</manifest>

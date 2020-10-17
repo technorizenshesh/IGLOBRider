@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/toobarcolor"
+
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/CustomTheme" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/exit_app_but"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/chatuser_img"
+                android:visibility="gone"
+                android:layout_marginLeft="10dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/logo" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:gravity="end|center_vertical"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small"
+                android:visibility="gone" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/titletext"
+            android:layout_toLeftOf="@+id/sss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="55dp"
+            android:singleLine="true"
+            android:text="@string/notification"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium" />
+
+
+    </RelativeLayout>
+
+<ListView
+    android:divider="@null"
+    android:layout_below="@+id/mainlay"
+    android:id="@+id/notilist"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></ListView>
+
+</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

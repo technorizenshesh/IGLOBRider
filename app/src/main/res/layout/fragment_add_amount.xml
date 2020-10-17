@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Fragments.FragmentAddAmount">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="#f6f6f6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/amount_et"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entermoney"
+                android:inputType="number"
+                android:background="@drawable/border_grey_rec"
+                android:textSize="@dimen/small"
+                android:padding="10dp" />
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/fifty_but"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/border_grey_rec"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/darkgrey"
+
+                    android:text="$50" />
+
+                <TextView
+                    android:id="@+id/hundred_but"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/border_grey_rec"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/darkgrey"
+
+                    android:text="$100" />
+
+                <TextView
+                    android:id="@+id/onefifty_but"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/border_grey_rec"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/darkgrey"
+                    android:text="$150" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+
+            android:id="@+id/botumlay"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/addmoney"
+                android:text="@string/addhitechmoney"
+                android:textSize="@dimen/medium"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@color/buttoncol"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

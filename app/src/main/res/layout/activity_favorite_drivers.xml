@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context="main.com.iglobuser.activity.FavoriteDrivers">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/toobarcolor"
+
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/CustomTheme" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/exit_app_but"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_back" />
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="55dp"
+                android:id="@+id/titletext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/favdriver"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/medium" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/search_lay"
+            android:layout_below="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/border_grey_rec"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/sss"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/search_icon" />
+                <EditText
+                    android:id="@+id/search_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:hint="@string/searchdriver"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text=""
+android:layout_toLeftOf="@+id/clear_text_b"
+                    android:imeOptions="actionSearch"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/sss"
+                     />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/clear_text_b"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/cancel_black" />
+
+            </RelativeLayout>
+
+
+            <EditText
+                android:visibility="gone"
+                android:hint="@string/searchdriver"
+                android:id="@+id/search_ets"
+                android:padding="3dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/border_grey_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ListView
+
+            android:divider="@null"
+            android:id="@+id/favdrilist"
+            android:layout_below="@+id/search_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

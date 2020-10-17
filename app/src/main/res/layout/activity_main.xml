@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context="main.com.iglobuser.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+android:layout_centerHorizontal="true"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/green_circle" />
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:layout_width="25dp"
+                        android:layout_height="20dp" />
+
+                    <ImageView
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="12dp"
+                        android:src="@drawable/red_circle" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/pickuplocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/clear_pick_ic"
+                                android:background="@null"
+                                android:hint="@string/pickuplocation"
+                                android:inputType="textNoSuggestions"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small" />
+
+                            <ImageView
+                                android:id="@+id/clear_pick_ic"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_cancel"
+                                android:visibility="visible" />
+
+                            <RelativeLayout
+
+                                android:id="@+id/rel_pic"
+                                android:layout_width="30dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginRight="5dp"
+                                android:visibility="gone">
+
+
+                                <ImageView
+                                    android:id="@+id/picmap_ic"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/destination"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropofflocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/clear_drop_ic"
+                                android:background="@null"
+                                android:hint="@string/droplocation"
+                                android:inputType="textNoSuggestions"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:layout_toLeftOf="@+id/rel"
+                                android:id="@+id/clear_drop_ic"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_cancel"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:id="@+id/rel"
+                                android:layout_width="22dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginRight="5dp"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:id="@+id/map_ic"
+                                    android:layout_width="22dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:src="@drawable/addres" />
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/pinmarimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/pin"
+            android:visibility="visible" />
+
+
+        <LinearLayout
+            android:id="@+id/botumlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/cartypelist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:reverseLayout="true" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/buttoncol"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/booknow"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/booknow"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"></View>
+
+                <TextView
+                    android:id="@+id/bookletter"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/bookletter"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:src="@drawable/pin"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/gpslocator"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="150dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_gps_local" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

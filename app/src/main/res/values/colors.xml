@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0B0B0B</color>
+    <color name="colorPrimaryDark">#0B0B0B</color>
+    <color name="colorAccent">#0B0B0B</color>
+    <color name="buttoncol">#0B0B0B</color>
+    <color name="darktextcol">#0B0B0B</color>
+    <color name="yellow">#f9d109</color>
+    <color name="toobarcolor">#0B0B0B</color>
+    <color name="darkgrey">#878787</color>
+    <color name="darkgreybutton">#202020</color>
+    <color name="white">#ffffff</color>
+    <color name="facebookcol">#185091</color>
+    <color name="green">#0B0B0B</color>
+    <color name="red">#0B0B0B</color>
+    <color name="black">#000000</color>
+    <color name="lightgrey">#d9d8d8</color>
+    <color name="drawemenuback">#2C3033</color>
+</resources>

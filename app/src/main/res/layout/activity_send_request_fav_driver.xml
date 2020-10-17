@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="main.com.iglobuser.activity.SendRequestFavDriver">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        >
+
+        <RelativeLayout
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/toobarcolor"
+
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/CustomTheme" />
+
+
+            <RelativeLayout
+                android:id="@+id/exit_app_but"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/sendrequest"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small" />
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo" />
+            <TextView
+                android:id="@+id/applycupon"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/applycoopn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small" />
+
+
+        </RelativeLayout>
+<RelativeLayout
+    android:layout_above="@+id/bottumlay"
+    android:layout_below="@+id/mainlay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        map:mapType="normal" />
+
+    <ImageView
+        android:id="@+id/pinmarimg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/pin"
+        android:visibility="visible" />
+
+</RelativeLayout>
+
+        <ImageView
+            android:id="@+id/gpslocator"
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/bottumlay"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_gps_local" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainlay"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/green_circle" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="20dp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="12dp"
+                        android:src="@drawable/red_circle" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/pickuplocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/clear_pick_ic"
+                                android:background="@null"
+                                android:hint="@string/pickuplocation"
+                                android:inputType="textNoSuggestions"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small" />
+
+                            <ImageView
+                                android:id="@+id/clear_pick_ic"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_cancel"
+                                android:visibility="visible" />
+
+                            <RelativeLayout
+
+                                android:id="@+id/rel_pic"
+                                android:layout_width="30dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginRight="5dp"
+                                android:visibility="gone">
+
+
+                                <ImageView
+                                    android:id="@+id/picmap_ic"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/destination"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropofflocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/clear_drop_ic"
+                                android:background="@null"
+                                android:hint="@string/droplocation"
+                                android:inputType="textNoSuggestions"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:layout_toLeftOf="@+id/rel"
+                                android:id="@+id/clear_drop_ic"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_cancel"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:id="@+id/rel"
+                                android:layout_width="22dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginRight="5dp"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:id="@+id/map_ic"
+                                    android:layout_width="22dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:src="@drawable/addres" />
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <RelativeLayout
+            android:id="@+id/bottumlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/cartypelist"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            app:reverseLayout="true" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/darkgrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"></View>
+                <TextView
+                    android:id="@+id/discount_tv"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/buttoncol"
+                    android:text="Discount applied successfully."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+
+                                android:padding="1dp"
+                                android:text="ETA"
+                                android:textColor="@color/darkgrey" />
+
+                            <TextView
+                                android:id="@+id/away_minute"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="1dp"
+                                android:text="1 min"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/extrasmall" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/black"></View>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+
+                                    android:padding="1dp"
+                                    android:text="Estimate Fare"
+                                    android:textColor="@color/darkgrey" />
+
+                                <TextView
+
+                                    android:id="@+id/fare_rate_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="$0"
+                                    android:textColor="@color/darkgrey"
+                                    android:textSize="@dimen/extrasmall" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/black"></View>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+
+                                android:padding="1dp"
+                                android:text="Max Size"
+                                android:textColor="@color/darkgrey" />
+
+                            <TextView
+                                android:id="@+id/people_size"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="1dp"
+                                android:text="4 people"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/extrasmall" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/black"
+                        android:visibility="gone"></View>
+
+
+                </LinearLayout>
+                <View
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/darkgrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:id="@+id/cashlay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/cashimg"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/cash" />
+
+                            <TextView
+                                android:id="@+id/cashtv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                android:padding="1dp"
+                                android:text="@string/cash"
+                                android:textColor="@color/buttoncol"
+                                android:textSize="@dimen/small" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/black"></View>
+
+                        <LinearLayout
+                            android:id="@+id/creditlay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/creditimg"
+                                android:layout_width="25dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/credit_card" />
+
+                            <TextView
+                                android:id="@+id/credittv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                android:padding="1dp"
+                                android:text="@string/creditcard"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/small" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/black"></View>
+
+                        <LinearLayout
+                            android:id="@+id/walletlay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/walletimg"
+                                android:layout_width="25dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/wallet_unsel" />
+
+                            <TextView
+                                android:id="@+id/wallettv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                android:padding="1dp"
+                                android:text="@string/wallet"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="@dimen/small" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/black"
+                        android:visibility="gone"></View>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/buttoncol"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/confirm_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/sendreq"
+                        android:textColor="@color/white" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="35dp"
+                        android:background="@color/white"
+                        android:visibility="gone"></View>
+
+                    <TextView
+                        android:id="@+id/cancel_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="@string/cancel"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
